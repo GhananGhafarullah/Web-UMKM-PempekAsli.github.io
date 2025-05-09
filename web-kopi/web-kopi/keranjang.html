@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="/js/script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  <style>
+
+body {
+      font-family: 'Segoe UI', sans-serif;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+
+    .product {
+      background: white;
+      padding: 10px 15px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    button {
+      background-color: #2c7be5;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #1a5dc0;
+    }
+
+    .cart-icon {
+      position: relative;
+      display: inline-block;
+      margin-top: 30px;
+    }
+
+    .cart-icon img {
+      width: 42px;
+    }
+
+    .badge {
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      background: #ff3b30;
+      color: white;
+      border-radius: 50%;
+      padding: 4px 8px;
+      font-size: 13px;
+      font-weight: bold;
+      box-shadow: 0 0 6px rgba(0,0,0,0.3);
+      transition: transform 0.2s ease;
+      animation: pop 0.2s ease;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    .cart {
+      margin-top: 25px;
+      border-top: 1px solid #ccc;
+      padding-top: 10px;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 5px;
+      /* background: #fff; */
+      padding: 8px 12px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .cancel-btn {
+      background-color: #ff3b30;
+      color: white;
+      border: none;
+      padding: 4px 8px;
+      font-size: 12px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .cancel-btn:hover {
+      background-color: #d32f2f;
+    }
+
+    .floating-whatsapp {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: white;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+
+  .floating-whatsapp a {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  </style>
+</head>
+<body>
+  <!-- feather ifcon -->
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <!-- my style -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- navbar start -->
+  <nav class="navbar">
+    <a href="#" class="navbar-logo">Kopi<span>Asbuk</span></a>
+
+    <div class="navbar-nav">
+      
+      <a href="index.html" style="margin-right: 100px;">Kembali</a>
+    </div>
+
+    <div class="navbar-extra">
+     <img src="" alt="">
+      <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+    </div>
+  </nav>
+  <!-- navbar end -->
+
+  <div class="floating-whatsapp">
+    <a href="https://wa.me/081517482322">
+        <img src="https://w7.pngwing.com/pngs/1010/451/png-transparent-whatsapp-logo-whatsapp-logo-computer-icons-messenger-text-grass-mobile-phones.png" alt="" width="100px" style="border-radius: 50%;">
+    </a>
+</div>
+
+
+  <section id="menu" class="menu">
+    <h2><span>Menu </span>Kami</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta soluta
+      harum fugiat aperiam maiores repellendus.
+    </p>
+
+    <div class="row">
+      <div class="menu-card">
+        <img
+          src="img/WhatsApp Image 2025-05-08 at 09.00.12_218860ab.jpg"
+          alt="Pempek Kapal Selam"
+          class="menu-card-image"
+        />
+        <h3 class="menu-card-tittle">- Pempek Kapal Selam -</h3>
+        <p class="menu-card-price">IDR 10K</p><br><br>
+        <button onclick="addToCart('Pempek Kapal Selam', 10000)">Tambah</button>
+      </div>
+      <div class="menu-card">
+        <img
+          src="img/WhatsApp Image 2025-05-08 at 09.00.12_b2185db5.jpg"
+          alt="Pempek Lenjer"
+          class="menu-card-image"
+        />
+        <h3 class="menu-card-tittle">- Pempek Lenjer -</h3>
+        <p class="menu-card-price">IDR 10K</p><br><br>
+        <button onclick="addToCart('Pempek Lenjer', 10000)">Tambah</button>
+      </div>
+      <div class="menu-card">
+        <img
+          src="img/WhatsApp Image 2025-05-08 at 09.00.13_0d8b57de.jpg"
+          alt="Pempek Kulit"
+          class="menu-card-image"
+        />
+        <h3 class="menu-card-tittle">- Pempek Kulit -</h3>
+        <p class="menu-card-price">IDR 10K</p><br><br>
+        <button onclick="addToCart('Pempek Kulit', 10000)">Tambah</button>
+      </div>
+      <div class="menu-card">
+        <img
+          src="img/WhatsApp Image 2025-05-08 at 09.00.13_bed3878b.jpg"
+          alt="Pempek Adaan"
+          class="menu-card-image"
+        />
+        <h3 class="menu-card-tittle">- Pempek Adaan -</h3>
+        <p class="menu-card-price">IDR 10K</p><br><br>
+        <button onclick="addToCart('Pempek Adaan', 10000)">Tambah</button>
+      </div>
+      
+    </div>
+  </section>
+  <!-- menu section end -->
+
+  <div class="cart-icon">
+    <img src="https://cdn-icons-png.flaticon.com/512/1170/1170678.png" alt="Cart">
+    <div class="badge" id="cart-badge">0</div>
+  </div>
+
+  <div class="cart">
+    <h2>Keranjang Belanja</h2>
+    <div id="cart-items"></div>
+    <p><strong>Total: Rp<span id="total">0</span></strong></p>
+  </div>
+
+  <script>
+    const cart = {};
+    let total = 0;
+    let itemCount = 0;
+
+    function addToCart(productName, price) {
+      if (cart[productName]) {
+        cart[productName].quantity += 1;
+      } else {
+        cart[productName] = { price: price, quantity: 1 };
+      }
+
+      total += price;
+      itemCount++;
+      updateCartUI();
+      animateBadge();
+    }
+
+    function removeFromCart(productName) {
+      const item = cart[productName];
+      if (item) {
+        total -= item.price * item.quantity;
+        itemCount -= item.quantity;
+        delete cart[productName];
+        updateCartUI();
+        animateBadge();
+      }
+    }
+
+    function updateCartUI() {
+      const cartItemsDiv = document.getElementById("cart-items");
+      cartItemsDiv.innerHTML = "";
+
+      for (const item in cart) {
+        const { price, quantity } = cart[item];
+        cartItemsDiv.innerHTML += `
+          <div class="cart-item">
+            <span>${item} x ${quantity} - Rp${(price * quantity).toLocaleString()}</span>
+            <button class="cancel-btn" onclick="removeFromCart('${item}')">Cancel</button>
+          </div>`;
+      }
+
+      document.getElementById("total").innerText = total.toLocaleString();
+      document.getElementById("cart-badge").innerText = itemCount;
+    }
+
+    function animateBadge() {
+      const badge = document.getElementById("cart-badge");
+      badge.style.animation = 'none';
+      void badge.offsetWidth;
+      badge.style.animation = 'pop 0.2s ease';
+    }
+  </script>
+</body>
+</html>
